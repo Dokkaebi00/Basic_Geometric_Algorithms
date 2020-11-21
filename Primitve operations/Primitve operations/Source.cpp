@@ -16,9 +16,9 @@ struct Point
 //<0 nguoc chieu kiem dong ho
 //>0 chieu kim dong ho
 
-int CWW(Point p, Point q, Point r)
+int CWW(Point a, Point b, Point c)
 {
-	int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
+	int val = (b.x - a.x) * (c.y - a.y) - (b.y - a.y) * (c.x - a.x);
 
 	if (val == 0)
 	{
@@ -88,6 +88,10 @@ void main()
 	q1.x = 2; q1.y = 3;
 	p2.x = 3; p2.y = 2;
 	q2.x = 4; q2.y = 2;
+
+	int test = CWW(q1, p2, p1);
+
+	cout << "test: "<<test << endl;
 
 	bool b = doIntersect(p1, q1, p2, q2);
 
